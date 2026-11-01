@@ -1,0 +1,25 @@
+/* Continuous effects are opt-in after initialization; all content has a static fallback. */
+#atmosphere{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;contain:strict;opacity:.8}
+main,footer{position:relative;z-index:1}
+[data-motion=on] body:before{opacity:.16}
+.motion-toggle{display:inline-flex;align-items:center;min-height:44px;margin-top:16px;padding:4px 0;border:0;background:none;font-size:.75rem;color:var(--mut);text-decoration:underline;text-underline-offset:4px}
+.motion-toggle:disabled{opacity:1;cursor:default;text-decoration:none}
+.name-motion,.name-shimmer{display:inline-block}.name-motion{animation:gentle-float 6s ease-in-out infinite;animation-play-state:paused}
+@supports(background-clip:text){[data-motion=on] .name-shimmer{background:linear-gradient(105deg,var(--acc) 30%,#788D26 46%,var(--acc) 62%);background-size:240% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:name-shimmer 8s ease-in-out infinite;animation-play-state:paused}[data-theme=dark][data-motion=on] .name-shimmer{background-image:linear-gradient(105deg,var(--acc) 30%,#E1EBA9 46%,var(--acc) 62%)}.name-shimmer .name-dot{color:inherit}}
+.profile-panel{position:relative;isolation:isolate}.profile-panel:before{content:'';position:absolute;pointer-events:none;top:26px;left:50%;width:246px;height:246px;margin-left:-123px;border-radius:50%;z-index:-1;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 22%,transparent),transparent 68%);opacity:.35;animation:portrait-breathe 5s ease-in-out infinite;animation-play-state:paused}
+#projects{position:relative;isolation:isolate}#projects:before,#projects:after{content:'';position:absolute;pointer-events:none;z-index:-1;width:min(42vw,480px);height:min(42vw,480px);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 10%,transparent),transparent 70%);opacity:.35;animation:ambient-breathe 12s ease-in-out infinite;animation-play-state:paused}#projects:before{left:0;top:3%}#projects:after{right:0;bottom:8%;animation-delay:-6s}
+[data-motion=on] .motion-in-view .name-motion,[data-motion=on] .motion-in-view .name-shimmer,[data-motion=on] .motion-in-view .profile-panel:before,[data-motion=on] #projects.motion-in-view:before,[data-motion=on] #projects.motion-in-view:after{animation-play-state:running}
+.page-hidden .name-motion,.page-hidden .name-shimmer,.page-hidden .profile-panel:before,.page-hidden #projects:before,.page-hidden #projects:after{animation-play-state:paused!important}
+.card{transition:transform .28s var(--ease),border-color .28s,box-shadow .28s,background .28s;user-select:none}.card:hover,.card:focus-visible{background:color-mix(in srgb,var(--card) 90%,var(--soft));box-shadow:0 22px 40px -24px color-mix(in srgb,var(--acc) 45%,transparent);border-color:var(--acc)}.project-symbol,.project-arrow,.cta .btn>span{transition:transform .25s var(--ease)}.card:hover .project-symbol{transform:translateY(-2px)}.card:hover .project-arrow,.cta .btn:hover>span{transform:translate(2px,-2px)}
+.nav ul a{transition:background .25s,color .25s,box-shadow .25s}.nav ul a.on{box-shadow:0 3px 10px -8px var(--acc)}
+/* Entrance motion is owned by motion.js so card hover transforms remain independent. */
+.reveal.revealed{animation:none}
+[data-motion=off] .name-motion,[data-motion=off] .name-shimmer,[data-motion=off] .profile-panel:before,[data-motion=off] #projects:before,[data-motion=off] #projects:after{animation:none;transform:none}
+[data-motion=off]{scroll-behavior:auto}[data-motion=off] *,[data-motion=off] *:before,[data-motion=off] *:after{transition:none!important}
+[data-motion=off] .card:hover,[data-motion=off] .btn:hover,[data-motion=off] .contact-card:hover,[data-motion=off] .project-arrow,[data-motion=off] .project-symbol,[data-motion=off] .cta .btn>span{transform:none}
+@keyframes gentle-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes name-shimmer{0%,20%{background-position:100% 50%}65%,100%{background-position:0% 50%}}
+@keyframes portrait-breathe{0%,100%{transform:scale(.95);opacity:.35}50%{transform:scale(1.13);opacity:.7}}
+@keyframes ambient-breathe{0%,100%{transform:scale(.92);opacity:.3}50%{transform:scale(1.08);opacity:.65}}
+@media(max-width:600px){#atmosphere{opacity:.55}.name-motion{animation-duration:8s}.profile-panel:before{width:210px;height:210px;margin-left:-105px;top:18px}#projects:after{display:none}}
+@media(prefers-reduced-motion:reduce){#atmosphere{display:none}.name-motion,.name-shimmer,.profile-panel:before,#projects:before,#projects:after{animation:none!important;transform:none!important}.name-shimmer{background:none!important;color:var(--acc)!important}.project-arrow,.project-symbol,.cta .btn>span{transform:none!important}}

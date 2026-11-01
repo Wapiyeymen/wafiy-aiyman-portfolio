@@ -1,0 +1,75 @@
+[
+  {
+    "file": "autoletter-dashboard.png",
+    "source": "FYP technical report supplied by Wafiy Aiyman",
+    "figure": "Figure 4.2",
+    "caption": "Super Admin dashboard and analytics"
+  },
+  {
+    "file": "autoletter-templates.png",
+    "source": "FYP technical report supplied by Wafiy Aiyman",
+    "figure": "Figure 4.3",
+    "caption": "Template Library and rich document editor"
+  },
+  {
+    "file": "autoletter-generator.png",
+    "source": "FYP technical report supplied by Wafiy Aiyman",
+    "figure": "Figure 4.10",
+    "caption": "Staff generator panel"
+  },
+  {
+    "file": "autoletter-approvals.png",
+    "source": "FYP technical report supplied by Wafiy Aiyman",
+    "figure": "Figure 4.5",
+    "caption": "Cross-department Approval Inbox"
+  },
+  {
+    "file": "autoletter-request.png",
+    "source": "FYP technical report supplied by Wafiy Aiyman",
+    "figure": "Figure 4.11",
+    "caption": "Staff template request form"
+  },
+  {
+    "file": "autoletter-architecture.png",
+    "source": "FYP technical report supplied by Wafiy Aiyman",
+    "figure": "Figure 3.2",
+    "caption": "AutoLetter System architecture"
+  },
+  {
+    "file": "autoletter-landing.png",
+    "source": "FYP technical report supplied by Wafiy Aiyman",
+    "figure": "Figure 4.1",
+    "caption": "Landing and sign-in page"
+  },
+  {
+    "file": "autoletter-workflow.png",
+    "source": "FYP technical report supplied by Wafiy Aiyman",
+    "figure": "Figure 3.5",
+    "caption": "Letter generation and approval workflow"
+  },
+  {
+    "file": "hr-autoletter.png",
+    "source": "Actual local HR Letter System prototype, captured through CUA without loading employee data"
+  },
+  {
+    "file": "data-center.jpeg",
+    "source": "Original Coohom project overview supplied locally"
+  },
+  {
+    "file": "data-center-detail.jpeg",
+    "source": "Original Coohom project alternate view supplied locally"
+  },
+  {
+    "file": "figma-design.jpeg",
+    "source": "Original Figma ElevateU sign-in design supplied locally"
+  },
+  {
+    "file": "figma-design-detail.jpeg",
+    "source": "Original Figma project additional screen supplied locally"
+  },
+  {
+    "file": "wafiy-portrait.png",
+    "source": "Original portrait attached by Wafiy Aiyman on 1 November 2026",
+    "caption": "Original supplied image, framed with CSS only"
+  }
+]
